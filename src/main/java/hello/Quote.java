@@ -7,6 +7,7 @@ public class Quote {
 
     private String type;
     private Value value;
+    private String extra;
 
     public Quote() {
     }
@@ -25,6 +26,14 @@ public class Quote {
 
     public void setValue(Value value) {
         this.value = value;
+    }
+
+    public String getExtra() {
+        return extra;
+    }
+
+    public void setExtra(String extra) {
+        this.extra = extra;
     }
 
     @Override

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-
+import java.lang.Math;
 
 /**
  * Created by shack on 2017-05-04.
@@ -22,6 +22,7 @@ public class QuoteController {
     @RequestMapping(value="/fwdreq", method = RequestMethod.GET)
     public ResponseEntity<Quote> get() {
         Quote q = runny(new RestTemplate());
+        q.setExtra(Double.toString(Math.random()));
 
         if (q.getValue().getId() < 4) {
             Quote badone = new Quote();
